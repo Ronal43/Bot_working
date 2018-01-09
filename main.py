@@ -45,8 +45,8 @@ def handle_text(message):
     user_markup.row('4')
     user_markup.row('5')
     bot.send_message(message.chat.id, "Сколько?")
-      @bot.message_handler(func=lambda message: message.text == "1"
-      def command_text_hi(m):
+    @bot.message_handler(func=lambda message: message.text == "1")
+    def command_text_hi(m):
           f = open('mamba.txt', 'r+')
           s = (f.read())
           a = s.split('\n')
@@ -56,6 +56,29 @@ def handle_text(message):
           bot.send_message(m.chat.id, 'Держи: \n '+mamba)
           bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
           del a[-1]
+          print (mamba)
+          print (a)
+          f = open('mamba.txt', 'w')
+          for index in a:
+              f.write(index + '\n')
+          f.close
+          f = open('mamba.txt', 'r+')
+          s = (f.read())
+          a = s.split('\n')
+          print (a)
+          f.close()
+          @bot.message_handler(func=lambda message: message.text == "1")
+          def command_text_hi(m):
+          f = open('mamba.txt', 'r+')
+          s = (f.read())
+          a = s.split('\n')
+          print (a)
+          f.close()
+          mamba = a.pop (0)
+          mamba1 = a.pop (1)
+          bot.send_message(m.chat.id, 'Держи: \n '+mamba '\n' +mamba2)
+          bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+          del a[0,1,-1]
           print (mamba)
           print (a)
           f = open('mamba.txt', 'w')
