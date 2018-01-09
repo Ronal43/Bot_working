@@ -235,8 +235,8 @@ def handle_text(message):
         vkmsk.close()
         vk = vkmsk_list.pop (0)
         del vkmsk_list[0]
-		vk1 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
+	vk1 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
         bot.send_message(m.chat.id, 'Лови:) \n' +vk)
         bot.send_message(m.chat.id, vk1)
         bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
@@ -260,13 +260,13 @@ def handle_text(message):
         vkmsk.close()
         vk = vkmsk_list.pop (0)
         del vkmsk_list[0]
-		vk1 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
-		vk2 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
+	vk1 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
+	vk2 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
         bot.send_message(m.chat.id, 'Лови:) \n' +vk)
         bot.send_message(m.chat.id, vk1)
-		bot.send_message(m.chat.id, vk2)
+	bot.send_message(m.chat.id, vk2)
         bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
         print (vk+' '+vk1+' '+vk2)
         print (vkmsk_list)
@@ -288,16 +288,16 @@ def handle_text(message):
         vkmsk.close()
         vk = vkmsk_list.pop (0)
         del vkmsk_list[0]
-		vk1 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
-		vk2 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
-		vk3 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
+	vk1 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
+	vk2 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
+	vk3 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
         bot.send_message(m.chat.id, 'Лови:) \n' +vk)
         bot.send_message(m.chat.id, vk1)
-		bot.send_message(m.chat.id, vk2)
-		bot.send_message(m.chat.id, vk3)
+	bot.send_message(m.chat.id, vk2)
+	bot.send_message(m.chat.id, vk3)
         bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
         print (vk+' '+vk1+' '+vk2' '+vk3)
         print (vkmsk_list)
@@ -319,19 +319,19 @@ def handle_text(message):
         vkmsk.close()
         vk = vkmsk_list.pop (0)
         del vkmsk_list[0]
-		vk1 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
-		vk2 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
-		vk3 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
-		vk4 = vkmsk_list.pop (0)
-		del vkmsk_list[0]
+	vk1 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
+	vk2 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
+	vk3 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
+	vk4 = vkmsk_list.pop (0)
+	del vkmsk_list[0]
         bot.send_message(m.chat.id, 'Лови:) \n' +vk)
         bot.send_message(m.chat.id, vk1)
-		bot.send_message(m.chat.id, vk2)
-		bot.send_message(m.chat.id, vk3)
-		bot.send_message(m.chat.id, vk4)
+	bot.send_message(m.chat.id, vk2)
+	bot.send_message(m.chat.id, vk3)
+	bot.send_message(m.chat.id, vk4)
         bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
         print (vk+' '+vk1+' '+vk2+' '+vk3+' '+vk4)
         print (vkmsk_list)
