@@ -21,11 +21,11 @@ bot=telebot.TeleBot(config.TOKEN)
 @bot.message_handler(commands=["start"])
 def handle_text(message): 
     user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
-    user_markup.row('Получить мамбу Киев') 
-    user_markup.row('Получить вк Киев')
+    #user_markup.row('Получить мамбу Киев') 
+    #user_markup.row('Получить вк Киев')
     user_markup.row('Получить мамбу МСК') 
     user_markup.row('Получить вк МСК')
-    bot.send_message(message.from_user.id, 'Нажми на кнопку', reply_markup=user_markup)
+    bot.send_message(message.from_user.id, 'Что нужно?', reply_markup=user_markup)
 
 @bot.message_handler(commands=["help"]) 
 def start(message):
@@ -228,28 +228,122 @@ def handle_text(message):
         vkmsk.close()
     @bot.message_handler(func=lambda message: message.text == "2")
     def command_text_hi(m):
-        f = open('vk.txt', 'r+')
-        s = (f.read())
-        a = s.split('\n')
-        print (a)
-        f.close()
-        vk = a.pop (0)
-        vk2 = a.pop (1)
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
+        vk = vkmsk_list.pop (0)
+        del vkmsk_list[0]
+		vk1 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
         bot.send_message(m.chat.id, 'Лови:) \n' +vk)
-        bot.send_message(m.chat.id, vk2)
+        bot.send_message(m.chat.id, vk1)
         bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
-        print (vk)
-        print (vk2)
-        print (a)
-        f = open('vk.txt', 'w')
-        for index in a:
-            f.write(index + '\n')
-        f.close
-        f = open('vk.txt', 'r+')
-        s = (f.read())
-        a = s.split('\n')
-        print (a)
-        f.close()
+        print (vk+' '+vk1)
+        print (vkmsk_list)
+        vkmsk = open('vk.txt', 'w')
+        for index in vkmsk_list:
+            vkmsk.write(index + '\n')
+        vkmsk.close
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
+	@bot.message_handler(func=lambda message: message.text == "3")
+    def command_text_hi(m):
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
+        vk = vkmsk_list.pop (0)
+        del vkmsk_list[0]
+		vk1 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+		vk2 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+        bot.send_message(m.chat.id, 'Лови:) \n' +vk)
+        bot.send_message(m.chat.id, vk1)
+		bot.send_message(m.chat.id, vk2)
+        bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+        print (vk+' '+vk1+' '+vk2)
+        print (vkmsk_list)
+        vkmsk = open('vk.txt', 'w')
+        for index in vkmsk_list:
+            vkmsk.write(index + '\n')
+        vkmsk.close
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
+	@bot.message_handler(func=lambda message: message.text == "4")
+    def command_text_hi(m):
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
+        vk = vkmsk_list.pop (0)
+        del vkmsk_list[0]
+		vk1 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+		vk2 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+		vk3 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+        bot.send_message(m.chat.id, 'Лови:) \n' +vk)
+        bot.send_message(m.chat.id, vk1)
+		bot.send_message(m.chat.id, vk2)
+		bot.send_message(m.chat.id, vk3)
+        bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+        print (vk+' '+vk1+' '+vk2' '+vk3)
+        print (vkmsk_list)
+        vkmsk = open('vk.txt', 'w')
+        for index in vkmsk_list:
+            vkmsk.write(index + '\n')
+        vkmsk.close
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
+	@bot.message_handler(func=lambda message: message.text == "4")
+    def command_text_hi(m):
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
+        vk = vkmsk_list.pop (0)
+        del vkmsk_list[0]
+		vk1 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+		vk2 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+		vk3 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+		vk4 = vkmsk_list.pop (0)
+		del vkmsk_list[0]
+        bot.send_message(m.chat.id, 'Лови:) \n' +vk)
+        bot.send_message(m.chat.id, vk1)
+		bot.send_message(m.chat.id, vk2)
+		bot.send_message(m.chat.id, vk3)
+		bot.send_message(m.chat.id, vk4)
+        bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+        print (vk+' '+vk1+' '+vk2+' '+vk3+' '+vk4)
+        print (vkmsk_list)
+        vkmsk = open('vk.txt', 'w')
+        for index in vkmsk_list:
+            vkmsk.write(index + '\n')
+        vkmsk.close
+        vkmsk = open('vk.txt', 'r+')
+        svkmsk = (vkmsk.read())
+        vkmsk_list = svkmsk.split('\n')
+        print (vkmsk_list)
+        vkmsk.close()
 
 if __name__=="__main__":
     bot.polling()
