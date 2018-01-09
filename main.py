@@ -28,6 +28,8 @@ def main():
 
     @bot.message_handler(func=lambda message: message.text == "Тебе скучно и одиноко?")
     def handle_text(message): 
+        user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+        user_markup.row('На главную')
         bot.send_message(message.from_user.id, 'Иди ко мне, сладкая...')
         bot.send_photo(message.from_user.id, open('1408564055_895357073.jpg', 'rb'))
         
@@ -65,7 +67,9 @@ def main():
                 f.close()
                 mamba = a.pop (0)
                 del a[0]
-                bot.send_message(m.chat.id, 'Держи: \n '+mamba)
+                user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+                user_markup.row('На главную')
+                bot.send_message(m.chat.id, 'Держи: \n '+mamba, reply_markup=user_markup)
                 bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
                 print (mamba)
                 print (a)
@@ -89,9 +93,10 @@ def main():
                 del a[0]
                 mamba1 = a.pop (0)
                 del a[0]
+                user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+                user_markup.row('На главную')
                 bot.send_message(m.chat.id, 'Держи: \n '+mamba)
-                bot.send_message(m.chat.id, mamba1)
-                bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+                bot.send_message(m.chat.id, mamba1, reply_markup=user_markup)
                 print (mamba)
                 print (mamba1)
                 print (a)
@@ -117,10 +122,11 @@ def main():
                 del a[0]
                 mamba2 = a.pop (0)
                 del a[0]
-                bot.send_message(m.chat.id, 'Держи: \n '+mamba)
+                user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+                user_markup.row('На главную')
+                bot.send_message(m.chat.id, 'Это уже дело)) \n '+mamba)
                 bot.send_message(m.chat.id, mamba1)
-                bot.send_message(m.chat.id, mamba2)
-                bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+                bot.send_message(m.chat.id, mamba2, reply_markup=user_markup)
                 print (mamba)
                 print (mamba1)
                 print (mamba2)
@@ -149,11 +155,12 @@ def main():
                 del a[0]
                 mamba3 = a.pop (0)
                 del a[0]
-                bot.send_message(m.chat.id, 'Держи: \n '+mamba)
+                user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+                user_markup.row('На главную')
+                bot.send_message(m.chat.id, 'Это сильно)) \n '+mamba)
                 bot.send_message(m.chat.id, mamba1)
                 bot.send_message(m.chat.id, mamba2)
-                bot.send_message(m.chat.id, mamba3)
-                bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+                bot.send_message(m.chat.id, mamba3, reply_markup=user_markup)
                 print (mamba)
                 print (mamba1)
                 print (mamba2)
@@ -185,12 +192,13 @@ def main():
                 del a[0]
                 mamba4 = a.pop (0)
                 del a[0]
-                bot.send_message(m.chat.id, 'Держи: \n '+mamba)
+                user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+                user_markup.row('На главную')
+                bot.send_message(m.chat.id, 'Ну, если ты справишься с ними... \n '+mamba)
                 bot.send_message(m.chat.id, mamba1)
                 bot.send_message(m.chat.id, mamba2)
                 bot.send_message(m.chat.id, mamba3)
-                bot.send_message(m.chat.id, mamba4)
-                bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+                bot.send_message(m.chat.id, mamba4, reply_markup=user_markup)
                 print (mamba)
                 print (mamba1)
                 print (mamba2)
@@ -257,7 +265,6 @@ def main():
               user_markup.row('На главную')
               bot.send_message(m.chat.id, 'Ну, два так два. Мне не жалко...\n' +vk)
               bot.send_message(m.chat.id, vk1,reply_markup=user_markup)
-              #bot.send_message(m.chat.id, '...',reply_markup=user_markup)
               print (vk+' '+vk1)
               print (vkmsk_list)
               vkmsk = open('vk.txt', 'w')
@@ -282,10 +289,11 @@ def main():
               del vkmsk_list[0]
               vk2 = vkmsk_list.pop (0)
               del vkmsk_list[0]
-              bot.send_message(m.chat.id, 'Лови:) \n' +vk)
+              user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+              user_markup.row('На главную')
+              bot.send_message(m.chat.id, 'О, мастер своего дела?;) \n' +vk)
               bot.send_message(m.chat.id, vk1)
-              bot.send_message(m.chat.id, vk2)
-              bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+              bot.send_message(m.chat.id, vk2, reply_markup=user_markup)
               print (vk+' '+vk1+' '+vk2)
               print (vkmsk_list)
               vkmsk = open('vk.txt', 'w')
@@ -312,11 +320,12 @@ def main():
               del vkmsk_list[0]
               vk3 = vkmsk_list.pop (0)
               del vkmsk_list[0]
-              bot.send_message(m.chat.id, 'Лови:) \n' +vk)
+              user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+              user_markup.row('На главную')
+              bot.send_message(m.chat.id, 'Ну, раз так хочешь... \n' +vk)
               bot.send_message(m.chat.id, vk1)
               bot.send_message(m.chat.id, vk2)
-              bot.send_message(m.chat.id, vk3)
-              bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+              bot.send_message(m.chat.id, vk3, reply_markup=user_markup)
               print (vk+" "+vk1+" "+vk2+" "+vk3)
               print (vkmsk_list)
               vkmsk = open('vk.txt', 'w')
@@ -345,12 +354,13 @@ def main():
               del vkmsk_list[0]
               vk4 = vkmsk_list.pop (0)
               del vkmsk_list[0]
-              bot.send_message(m.chat.id, 'Лови:) \n' +vk)
+              user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
+              user_markup.row('На главную')
+              bot.send_message(m.chat.id, 'Ого, а сравишься?) \n' +vk)
               bot.send_message(m.chat.id, vk1)
               bot.send_message(m.chat.id, vk2)
               bot.send_message(m.chat.id, vk3)
-              bot.send_message(m.chat.id, vk4)
-              bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
+              bot.send_message(m.chat.id, vk4, reply_markup=user_markup)
               print (vk+' '+vk1+' '+vk2+' '+vk3+' '+vk4)
               print (vkmsk_list)
               vkmsk = open('vk.txt', 'w')
