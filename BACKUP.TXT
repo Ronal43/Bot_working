@@ -1,0 +1,41 @@
+#coding:utf-8
+import telebot, config
+from telebot import types
+import time
+import os
+
+knownUsers = []  # todo: save these in a file,
+userStep = {}  # so they won't reset every time the bot restarts
+
+commands = {  # command description used in the "help" command
+              'start': 'Get used to the bot',
+              'help': 'Gives you information about the available commands',
+              'sendLongText': 'A test using the \'send_chat_action\' command',
+              'getImage': 'A test using multi-stage messages, custom keyboard, and media sending'
+}
+
+
+bot=telebot.TeleBot(config.TOKEN)
+
+
+@bot.message_handler(commands=["start"])
+def start(message):
+    bot.send_message(message.chat.id, "Здраствуйте. Чего изволите?")
+
+@bot.message_handler(commands=["dai_mambu"])
+def start(message):
+    bot.send_message(message.chat.id, "Держи {-Variable.MAMBA-}")
+
+@bot.message_handler(func=lambda message: message.text == "Дай мамбу")
+def command_text_hi(m):
+    bot.send_message(m.chat.id, 'test')
+    
+@bot.message_handler(func=lambda message: message.text == "Дай вк") 
+def command_text_hi(m):
+    f = open('vk.txt')
+    line = f.readline(1)
+    print (line),
+    bot.send_message(m.chat.id, line)
+
+if __name__=="__main__":
+    bot.polling()
