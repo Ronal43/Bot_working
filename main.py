@@ -279,8 +279,8 @@ def handle_text(message):
           vkmsk_list = svkmsk.split('\n')
           print (vkmsk_list)
           vkmsk.close()
-   @bot.message_handler(func=lambda message: message.text == "4")
-   def command_text_hi(m):
+    @bot.message_handler(func=lambda message: message.text == "4")
+    def command_text_hi(m):
           vkmsk = open('vk.txt', 'r+')
           svkmsk = (vkmsk.read())
           vkmsk_list = svkmsk.split('\n')
@@ -299,7 +299,7 @@ def handle_text(message):
           bot.send_message(m.chat.id, vk2)
           bot.send_message(m.chat.id, vk3)
           bot.send_message(m.chat.id, 'Работай хорошо, тогда у тебя всегда будут свежие и красивые аккаунты;)')
-          print (vk+' '+vk1+' '+vk2' '+vk3)
+          print (vk+" "+vk1+" "+vk2+" "+vk3)
           print (vkmsk_list)
           vkmsk = open('vk.txt', 'w')
           for index in vkmsk_list:
@@ -310,7 +310,7 @@ def handle_text(message):
           vkmsk_list = svkmsk.split('\n')
           print (vkmsk_list)
           vkmsk.close()
-          @bot.message_handler(func=lambda message: message.text == "4")
+    @bot.message_handler(func=lambda message: message.text == "5")
     def command_text_hi(m):
           vkmsk = open('vk.txt', 'r+')
           svkmsk = (vkmsk.read())
