@@ -1,7 +1,7 @@
 #coding:utf-8
 import telebot, config
 from telebot import types
-import time
+import datetime
 import os
 import sys
 import subprocess
@@ -12,7 +12,33 @@ knownUsers = []  # todo: save these in a file,
 userStep = {}  # so they won't reset every time the bot restarts
 
 
+def get_user_step(uid):
+    if uid in userStep:
+        return userStep[uid]
+    else:
+        knownUsers.append(uid)
+        userStep[uid] = 0
+        return 0
+
+
+
+def listener(messages):
+    """
+    When new messages arrive TeleBot will call this function.
+    """
+    for m in messages:
+        if m.content_type == 'text':
+            print (str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text)
+            spisok = [str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text]
+            filename=m.chat.first_name + m.chat.last_name +'.txt'
+            spisok2 = open(filename, 'a')
+            for index in spisok:
+                spisok2.write(index + '\n')
+            spisok2.close
+
+
 bot=telebot.TeleBot(config.TOKEN)
+bot.set_update_listener(listener)
 
 def main():
     @bot.message_handler(commands=["start"])
@@ -372,6 +398,7 @@ def main():
               vkmsk_list = svkmsk.split('\n')
               print (vkmsk_list)
               vkmsk.close()
+
 
     if __name__=="__main__":
         bot.polling()
