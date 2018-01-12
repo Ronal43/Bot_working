@@ -44,8 +44,8 @@ def main():
     @bot.message_handler(commands=["start"])
     def handle_text(message): 
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
-        #user_markup.row('Получить мамбу Киев') 
-        #user_markup.row('Получить вк Киев')
+        user_markup.row('Нужна мамба на Киев') 
+        user_markup.row('Получить вк Киев')
         user_markup.row('Получить мамбу МСК') 
         user_markup.row('Получить вк МСК')
         user_markup.row('КНОПКА')
@@ -64,17 +64,20 @@ def main():
     def start(message):
         bot.send_message(message.chat.id, 'Попросите у меня Вк, и я дам его вам, попросите Мамбу, и я тоже ее вам дам.\nНо не просите у меня кушать:)(все, кто попросит - покушают пиздюлей)')
 
+
+
     @bot.message_handler(func=lambda message: message.text == "На главную")
     def handle_text(message): 
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
-        #user_markup.row('Получить мамбу Киев') 
-        #user_markup.row('Получить вк Киев')
+        user_markup.row('Нужна мамба на Киев') 
+        user_markup.row('Получить вк Киев')
         user_markup.row('Получить мамбу МСК') 
         user_markup.row('Получить вк МСК')
         user_markup.row('КНОПКА')
         bot.send_message(message.from_user.id, 'И вот мы снова у начала, нажимай...', reply_markup=user_markup)
 	
-	@bot.message_handler(func=lambda message: message.text == "Нужна мамба на Киев")
+
+    @bot.message_handler(func=lambda message: message.text == "Нужна мамба на Киев")
     def handle_text(message):
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('Одна мамба')
@@ -242,7 +245,7 @@ def main():
                 uamamba.close()
 	
 	
-	@bot.message_handler(func=lambda message: message.text == "Получить вк Киев") 
+    @bot.message_handler(func=lambda message: message.text == "Получить вк Киев") 
     def handle_text(message):
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('1 акк')
