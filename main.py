@@ -2,6 +2,7 @@
 import telebot, config
 from telebot import types
 import datetime
+from datetime import datetime 
 import os
 import sys
 import subprocess
@@ -28,8 +29,9 @@ def listener(messages):
     """
     for m in messages:
         if m.content_type == 'text':
-            print (str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text)
-            spisok = [str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text]
+            date = datetime.now(tz=None)
+            print ("{" + str(date) +"} " + str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text)
+            spisok = ["{" + str(date) +"} " + str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text]
             filename=m.chat.first_name + m.chat.last_name +'.txt'
             spisok2 = open(filename, 'a')
             for index in spisok:
@@ -49,7 +51,7 @@ def main():
         user_markup.row('Получить мамбу МСК') 
         user_markup.row('Получить вк МСК')
         user_markup.row('Тебе скучно и одиноко?')
-        bot.send_message(message.from_user.id, 'Чего надобно, старче?', reply_markup=user_markup)
+        bot.send_message(message.from_user.id, 'Что привело тебя в столь темное место, красавица?', reply_markup=user_markup)
 
 
     @bot.message_handler(func=lambda message: message.text == "Тебе скучно и одиноко?")
