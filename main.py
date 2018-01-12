@@ -51,7 +51,7 @@ def main():
         bot.send_message(message.from_user.id, 'Что привело тебя в столь темное место, красавица?', reply_markup=user_markup)
 
 
-    @bot.message_handler(func=lambda message: message.text == "Тебе скучно и одиноко?")
+    @bot.message_handler(func=lambda message: message.text == "КНОПКА")
     def handle_text(message): 
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('На главную')
