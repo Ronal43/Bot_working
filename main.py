@@ -50,7 +50,7 @@ def main():
         #user_markup.row('Получить вк Киев')
         user_markup.row('Получить мамбу МСК') 
         user_markup.row('Получить вк МСК')
-        user_markup.row('Тебе скучно и одиноко?')
+        user_markup.row('КНОПКА')
         bot.send_message(message.from_user.id, 'Что привело тебя в столь темное место, красавица?', reply_markup=user_markup)
 
 
@@ -400,7 +400,10 @@ def main():
               vkmsk_list = svkmsk.split('\n')
               print (vkmsk_list)
               vkmsk.close()
-
+        
+    @bot.message_handler(commands=["authorina"])
+        def handle_text(message):
+            bot.send_message(message.from_user.id, '@Ronal43')
 
     if __name__=="__main__":
         bot.polling()
