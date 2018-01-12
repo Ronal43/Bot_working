@@ -2,7 +2,7 @@
 import telebot, config
 from telebot import types
 import datetime
-from datetime import datetime 
+from datetime import date
 import os
 import sys
 import subprocess
@@ -24,15 +24,12 @@ def get_user_step(uid):
 
 
 def listener(messages):
-    """
-    When new messages arrive TeleBot will call this function.
-    """
     for m in messages:
         if m.content_type == 'text':
-            date = datetime.now(tz=None)
-            print ("{" + str(date) +"} " + str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text)
-            spisok = ["{" + str(date) +"} " + str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text]
-            filename=m.chat.first_name + m.chat.last_name +'.txt'
+            date = datetime.date.today()
+            print (str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text)
+            spisok = [str(m.chat.first_name) + " [" + str(m.chat.id) + "]: " + m.text]
+            filename = str(date) + "_" + m.chat.first_name +"_" + m.chat.last_name +'.txt'
             spisok2 = open(filename, 'a')
             for index in spisok:
                 spisok2.write(index + '\n')
@@ -401,9 +398,9 @@ def main():
               print (vkmsk_list)
               vkmsk.close()
         
-    @bot.message_handler(commands=["authorina"])
-        def handle_text(message):
-            bot.send_message(message.from_user.id, '@Ronal43')
+    @bot.message_handler(func=lambda message: message.text == "Телегу автора мне")
+    def command_text_hi(m):
+          bot.send_message(m.chat.id, '@Ronal43')
 
     if __name__=="__main__":
         bot.polling()
