@@ -8,7 +8,6 @@ import sys
 import subprocess
 import string
 import re
-import random   
 
 knownUsers = []  # todo: save these in a file,
 userStep = {}  # so they won't reset every time the bot restarts
