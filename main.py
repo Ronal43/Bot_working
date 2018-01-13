@@ -53,11 +53,15 @@ def main():
 
 
     @bot.message_handler(func=lambda message: message.text == "КНОПКА")
-    def handle_text(message): 
+    def handle_text(message):
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('На главную')
         bot.send_message(message.from_user.id, 'Иди ко мне, сладкая...')
-        bot.send_photo(message.from_user.id, open('1408564055_895357073.jpg', 'rb'))
+        kartink = random.choice(os.listdir("/home/makar/rabotayet/Bot_working/kartinki/"))
+        kartinka = "/home/makar/rabotayet/Bot_working/kartinki/" + kartink
+        print (kartink)
+        print (kartinka)
+        bot.send_photo(message.from_user.id, open(kartinka, 'rb'))
         
 
     @bot.message_handler(commands=["help"]) 
