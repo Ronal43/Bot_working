@@ -50,11 +50,6 @@ def main():
     @bot.message_handler(commands=["start"])
     def handle_text(message): 
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
-        user_markup.row('Нужна мамба на Киев') 
-        user_markup.row('Получить вк Киев')
-        user_markup.row('Получить мамбу МСК') 
-        user_markup.row('Получить вк МСК')
-        user_markup.row('КНОПКА')
         priv = ('Привет;)', 'Давай работать, что-ли?:Р', 'Хочешь аккаунтов?)', 'Мамбы, вк!! Легко и просто!!!', 'Нажми на кно... Хотя нет, не нажим... Жми, короче, я согласен...Может...', 'Давай нажимать кнопочки и ломать меня))', 'Люблю, когда нажимают кнопочки))', 'Надоели хачики? Попроси картиночку!!')
         #orig_mamba = open('mambaorig.txt', 'r+')
         rab_mamba = open('mamba.txt', 'r+')
@@ -120,6 +115,11 @@ def main():
         #        vkresult_ua.append(index)
         #print(len(vkresult_ua))
         #vkuaresultat = str(len(vkresult_ua))
+        user_markup.row('Нужна мамба на Киев') 
+        user_markup.row('Получить вк Киев')
+        user_markup.row('Получить мамбу МСК') 
+        user_markup.row('Получить вк МСК')
+        user_markup.row('КНОПКА')
         bot.send_message(message.from_user.id, random.choice(priv), reply_markup=user_markup)
         bot.send_message(message.chat.id, 'У меня есть в наличии много вкусностей:)\n')
         bot.send_message(message.chat.id, 'Mamba.ru: ' + mambaresultat + '\nVk.com: ' + vkresultat + '\nMamba.UA: ' + mambauaresult + '\nvk.com(ua): ' + vkuaresultat)
@@ -131,8 +131,8 @@ def main():
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('На главную')
         bot.send_message(message.from_user.id, 'Иди ко мне, сладкая...')
-        kartink = random.choice(os.listdir("/home/makar/rabotayet/Bot_working/test/TESTBOT/kartinki/"))
-        kartinka = "/home/makar/rabotayet/Bot_working/test/TESTBOT/kartinki/" + kartink
+        kartink = random.choice(os.listdir("/home/makar/rabotayet/Bot_working/kartinki/"))
+        kartinka = "/home/makar/rabotayet/Bot_working/kartinki/" + kartink
         print (kartink)
         print (kartinka)
         bot.send_photo(message.from_user.id, open(kartinka, 'rb'))
@@ -140,18 +140,12 @@ def main():
 
     @bot.message_handler(commands=["help"]) 
     def start(message):
-        bot.send_message(message.chat.id, 'Попросите у меня Вк, и я дам его вам, попросите Мамбу, и я тоже ее вам дам.\nНо не просите у меня кушать:)(все, кто попросит - покушают пиздюлей)')
-
+        bot.send_message(message.chat.id, '')
 
 
     @bot.message_handler(func=lambda message: message.text == "На главную")
     def handle_text(message): 
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
-        user_markup.row('Нужна мамба на Киев') 
-        user_markup.row('Получить вк Киев')
-        user_markup.row('Получить мамбу МСК') 
-        user_markup.row('Получить вк МСК')
-        user_markup.row('КНОПКА')
         #orig_mamba = open('mambaorig.txt', 'r+')
         rab_mamba = open('mamba.txt', 'r+')
         mamba_list = (rab_mamba.read())
@@ -216,6 +210,11 @@ def main():
         #        vkresult_ua.append(index)
         #print(len(vkresult_ua))
         #vkuaresultat = str(len(vkresult_ua))
+        user_markup.row('Нужна мамба на Киев') 
+        user_markup.row('Получить вк Киев')
+        user_markup.row('Получить мамбу МСК') 
+        user_markup.row('Получить вк МСК')
+        user_markup.row('КНОПКА')
         glavn = ('Опять мы тут, продолжим же)', 'Что-нибудь еще?', 'Продолжаем.', 'Ну, что еще?','Меня разорили...','Я снова потерял часть себя:(','Желаете еще чего-нибудь?')
         bot.send_message(message.from_user.id, random.choice(glavn), reply_markup=user_markup)
         bot.send_message(message.chat.id, 'Теперь у меня: \n' +'Mamba.ru: ' + mambaresultat + '\nVk.com: ' + vkresultat + '\nMamba.UA: ' + mambauaresult + '\nvk.com(ua): ' + vkuaresultat, reply_markup=user_markup)
