@@ -5,3 +5,6 @@ Thu Jan 18 01:22:40 2018-IntimCity [502600051]: hhk
 Thu Jan 18 01:23:38 2018-IntimCity [502600051]: На главную
 Thu Jan 18 01:23:42 2018-IntimCity [502600051]: Получить мамбу МСК
 Thu Jan 18 01:23:46 2018-IntimCity [502600051]: 1
+Thu Jan 18 18:16:02 2018-IntimCity [502600051]: /start
+Thu Jan 18 18:16:02 2018-IntimCity [502600051]: /start
+Thu Jan 18 18:16:02 2018-IntimCity [502600051]: /start
