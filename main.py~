@@ -17,7 +17,7 @@ knownUsers = []  # todo: save these in a file,
 userStep = {}  # so they won't reset every time the bot restarts
 
 
-def get_user_step(uid):                 #В душе не ебу, нах я это сюда вкрутил, но потом что-то намучу с ним, типа привязки по ИД-у и выдачи не более определенного количества акков/прокси
+def get_user_step(uid):
     if uid in userStep:
         return userStep[uid]
     else:
@@ -143,7 +143,7 @@ def main():
         bot.send_message(message.chat.id, '')
 
 
-    @bot.message_handler(func=lambda message: message.text == "На главную")                     #Говорит, сколько вообще акков есть, проверка по файлам, очищает от пустот и хлама, точность 99.9999999%
+    @bot.message_handler(func=lambda message: message.text == "На главную")
     def handle_text(message): 
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         #orig_mamba = open('mambaorig.txt', 'r+')
@@ -220,7 +220,7 @@ def main():
         bot.send_message(message.chat.id, 'Теперь у меня: \n' +'Mamba.ru: ' + mambaresultat + '\nVk.com: ' + vkresultat + '\nMamba.UA: ' + mambauaresult + '\nvk.com(ua): ' + vkuaresultat, reply_markup=user_markup)
 
 	
-    @bot.message_handler(func=lambda message: message.text == "Нужна мамба на Киев")                #Выдача мамб(киев), Выдает не больше, чем есть, минимум 1, при ноле возвращает на главную.
+    @bot.message_handler(func=lambda message: message.text == "Нужна мамба на Киев")
     def handle_text(message):
         #orig_mamba_ua = open('mambaorigua.txt', 'r+')
         rab_mamba_ua = open('mambaua.txt', 'r+')
