@@ -130,7 +130,7 @@ def main():
     def handle_text(message):
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row('На главную')
-        bot.send_message(message.from_user.id, 'Иди ко мне, сладкая...')
+        bot.send_message(message.from_user.id, 'Картинка:)')
         kartink = random.choice(os.listdir("/home/makar/rabotayet/Bot_working/kartinki/"))
         kartinka = "/home/makar/rabotayet/Bot_working/kartinki/" + kartink
         print (kartink)
